@@ -1,0 +1,44 @@
+<div class="container">
+    <nav *ngIf="bool" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li id="root" class="breadcrumb-item active" aria-current="page">GameApp</li>
+            <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+            <li class="breadcrumb-item"><a [routerLink]="['/games']">Games</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{game.GameTitle}}</li>
+        </ol>
+    </nav>
+    <h1 *ngIf="bool" class="my-4">{{game.GameTitle}}
+        <!-- <small class="text-50">me</small> -->
+    </h1>
+    <hr *ngIf="bool">
+    <div class="row">
+        <img [ngStyle]="{'display': visible}" class="img-fluid loading mx-auto mt-4" src="assets/img/loading.gif" alt="Cargando...">
+    </div>
+    <div class="row">
+        <img [ngStyle]="{'display': visible}" class="img-fluid loading mx-auto mt-4" src="assets/img/cargando.gif" alt="Cargando...">
+    </div>
+    <div *ngIf="bool" class="row mt-4">
+        <div class="col-md-4">
+            <img class="card-img-top img-fluid" [src]='setImage(game.Images.boxart)' [alt]="game.GameTitle">
+        </div>
+        <div class="col-md-8 mt-5">
+            <ul>
+                <li *ngIf="game.GameTitle"><strong [ngClass]="classText">Title: </strong>{{game.GameTitle}}</li>
+                <li *ngIf="game.Platform"><strong [ngClass]="classText">Platform: </strong>{{game.Platform}}</li>
+                <li *ngIf="game.Publisher"><strong [ngClass]="classText">Publisher: </strong>{{game.Publisher}}</li>
+                <li *ngIf="game.Developer"><strong [ngClass]="classText">Developer: </strong>{{game.Developer}}</li>
+                <li *ngIf="game.Genres"><strong [ngClass]="classText">Genres: </strong>{{game.Genres.genre}}</li>
+                <li *ngIf="game.ReleaseDate"><strong [ngClass]="classText">Release date (mm/dd/yy): </strong>{{game.ReleaseDate}}</li>
+                <li *ngIf="game.ESRB"><strong [ngClass]="classText">ESRB: </strong>{{game.ESRB}}</li>
+            </ul>
+            <p>
+                {{game.Overview}}
+            </p>
+        </div>
+    </div>
+    <div *ngIf="bool" class="row">
+        <div class="col-12 mt-5 text-center">
+            <button [routerLink]="['/games']" type="button" [ngClass]="classButtonOut" class="btn btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+        </div>
+    </div>
+</div>

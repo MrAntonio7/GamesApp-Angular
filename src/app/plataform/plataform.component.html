@@ -1,0 +1,65 @@
+<div class="container">
+    <nav *ngIf="bool" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li id="root" class="breadcrumb-item active" aria-current="page">GameApp</li>
+            <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+            <li class="breadcrumb-item"><a [routerLink]="['/plataforms']">Plataforms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{plataforma.Platform}}</li>
+        </ol>
+    </nav>
+    <h1 *ngIf="bool" class="my-4">{{plataforma.Platform}}
+        <!-- <small class="text-50">me</small> -->
+    </h1>
+    <hr *ngIf="bool">
+    <div class="row">
+        <img [ngStyle]="{'display': visible}" class="img-fluid loading mx-auto mt-4" src="assets/img/loading.gif" alt="Cargando...">
+    </div>
+    <div class="row">
+        <img [ngStyle]="{'display': visible}" class="img-fluid loading mx-auto mt-4" src="assets/img/cargando.gif" alt="Cargando...">
+    </div>
+    <div *ngIf="bool" class="row mt-4">
+        <div class="col-md-4 bg-light rounded">
+            <img class="card-img-top img-fluid" [src]='setImage(plataforma.Images.consoleart)' [alt]="plataforma.Platform">
+        </div>
+        <div class="col-md-8 mt-5">
+            <ul>
+                <li *ngIf="plataforma.Platform"><strong [ngClass]="classText">Name: </strong>{{plataforma.Platform}}</li>
+                <li *ngIf="plataforma.developer"><strong [ngClass]="classText">Developer: </strong>{{plataforma.developer}}</li>
+                <li *ngIf="plataforma.manufacturer"><strong [ngClass]="classText">Manufacturer: </strong>{{plataforma.manufacturer}}</li>
+                <li *ngIf="plataforma.cpu"><strong [ngClass]="classText">CPU: </strong>{{plataforma.cpu}}</li>
+                <li *ngIf="plataforma.graphics"><strong [ngClass]="classText">Graphics: </strong>{{plataforma.graphics}}</li>
+                <li *ngIf="plataforma.memory"><strong [ngClass]="classText">Memory: </strong>{{plataforma.memory}}</li>
+                <li *ngIf="plataforma.media"><strong [ngClass]="classText">Media: </strong>{{plataforma.media}}</li>
+                <li *ngIf="plataforma.display"><strong [ngClass]="classText">Display: </strong>{{plataforma.display}}</li>
+                <li *ngIf="plataforma.sound"><strong [ngClass]="classText">Sound: </strong>{{plataforma.sound}}</li>
+                <li *ngIf="plataforma.maxcontrollers"><strong [ngClass]="classText">Max. Controllers: </strong>{{plataforma.maxcontrollers}}</li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="bool" class="row">
+        <div class="col-12">
+            <div class="mt-5 text-center">
+                <span *ngFor="let i of rating"> <i *ngIf="i" class="fa fa-star" aria-hidden="true"></i>
+            </span>
+                <span *ngFor="let i of rating_vacio"> <i *ngIf="i" class="fa fa-star star-white" aria-hidden="true"></i>
+            </span>
+                <span [ngClass]="classBadget" class="btn" class="badge rating">{{plataforma.Rating}}</span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="bool" class="row">
+        <div class="col-12 mt-5 mx-auto">
+            <button (click)="desplegable = !desplegable" type="button" [ngClass]="classButtonOut" class="btn btn-block">Click to description <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+            <div class="fadeIn fast mt-4" *ngIf="desplegable">
+                <p>
+                    {{plataforma.overview}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="bool" class="row">
+        <div class="col-12 mt-5 text-center">
+            <button [routerLink]="['/plataforms']" type="button" [ngClass]="classButtonOut" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+        </div>
+    </div>
+</div>

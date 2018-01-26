@@ -1,0 +1,62 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1500">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" data-ride="ride">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="assets/img/playstation.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/xbox.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/nintendo.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li id="root" class="breadcrumb-item active" aria-current="page">GameApp</li>
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+</nav>
+<br>
+
+<div class="container top30">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" src="assets/img/plataform.png" alt="Plataforms">
+            <hr>
+            <p>
+                We have at your disposal all the information of the videogames's plataforms so far. You can see them here ...
+            </p>
+            <a [routerLink]="['/plataforms']"><button type="button" class="btn" [ngClass]="classButton">Plataforms</button></a>
+        </div>
+        <div class="col-md-4">
+            <img class="img-fluid" src="assets/img/games.png" alt="Games">
+            <hr>
+            <p>
+                You can search all available games with his information since the birth of the games in our database. You can search here ...
+            </p>
+            <a [routerLink]="['/games']"><button type="button" class="btn" [ngClass]="classButton">Search games</button></a>
+        </div>
+        <div class="col-md-4">
+            <img class="img-fluid" src="assets/img/about.png" alt="Chat">
+            <hr>
+            <p>
+                You can talk in real-time chat on our page with a web support. Tell us everything you want. (It's really a bot...)
+            </p>
+            <a [routerLink]="['/contact']"><button type="button" class="btn" [ngClass]="classButton">Chat</button></a>
+        </div>
+    </div>
+</div>

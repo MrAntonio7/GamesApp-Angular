@@ -1,0 +1,50 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li id="root" class="breadcrumb-item active" aria-current="page">GameApp</li>
+            <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">About</li>
+        </ol>
+    </nav>
+    <h1 class="my-4">About
+        <small class="text-50">me</small>
+    </h1>
+    <hr>
+    <div class="row">
+
+        <div class="col-md-6">
+            <img class="img-fluid" src="assets/img/milogo_negativo.png" alt="Me">
+        </div>
+
+        <div class="col-md-6">
+            <h3 class="my-3">Project Description <small class="text-50"><strong>GameApp</strong> </small></h3>
+            <p>Project developed with Angular by Antonio Jesús Álvarez Malagón.
+            </p>
+            <h6>APIs used: </h6>
+            <ul>
+                <li>http://wiki.thegamesdb.net/index.php?title=API_Introduction</li>
+                <li>http://mydemos.in/chatbot/index.php?msg=$variable</li>
+            </ul>
+            <h6>Techniques used: </h6>
+            <ul>
+                <li>Angular 5</li>
+                <li>Bootstrap 4</li>
+                <li>Services (shared components, HttpClient...)</li>
+                <li>Pipes (filters)</li>
+                <li>Routes</li>
+                <li>Directives</li>
+                <li>Interfaces</li>
+                <li>Observables</li>
+                <li>And others...</li>
+            </ul>
+            <hr>
+            <h3 class="my-3">Social</h3>
+            <button [ngClass]="classButton" type="submit" class="btn pt-1 pb-1 pl-3 pr-3 mb-1"><i class="fa fa-twitter" aria-hidden="true"></i></button>
+            <button [ngClass]="classButton" type="submit" class="btn pt-1 pb-1 pl-3 pr-3 mb-1">&nbsp;<i class="fa fa-facebook" aria-hidden="true"></i></button>
+            <button [ngClass]="classButton" type="submit" class="btn pt-1 pb-1 pl-3 pr-3 mb-1"><i class="fa fa-github" aria-hidden="true"></i></button>
+            <button [ngClass]="classButton" type="submit" class="btn pt-1 pb-1 pl-3 pr-3 mb-1"><i class="fa fa-instagram" aria-hidden="true"></i></button>
+            <button [ngClass]="classButton" type="submit" class="btn pt-1 pb-1 pl-3 pr-3 mb-1"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
+            <button [ngClass]="classButton" type="submit" class="btn pt-1 pb-1 pl-3 pr-3 mb-1"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+        </div>
+
+    </div>

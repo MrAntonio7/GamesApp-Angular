@@ -1,0 +1,40 @@
+<div class="container pt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li id="root" class="breadcrumb-item active" aria-current="page">GameApp</li>
+            <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Live Chat</li>
+        </ol>
+    </nav>
+    <h1>Support - Live chat </h1>
+    <p class="text-80">You can speak with me <strong> in real time</strong>. Only in English, please.</p>
+    <hr>
+
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let m of chatMensajes">
+            <p class="text-dark text-right">
+                {{m[0]}}
+                <span class="badge badge-pill badge-primary">Yo</span>
+            </p>
+            <hr>
+            <p class="text-dark text-left ">
+                <span class="badge badge-pill badge-success">Antonio</span> {{m[1]}}
+            </p>
+        </li>
+    </ul>
+
+    <img [ngStyle]="{'display': visible}" class="img-fluid" src="assets/img/escribiendo.gif" alt="Escribiendo...">
+</div>
+
+<div class="container">
+    <form class="top30" (ngSubmit)="chat(msg)" #msg="ngForm">
+        <div class="form-group row mt-3">
+            <div class="col-10">
+                <input type="text" class="form-control" placeholder="Send your message" name="msg" ngModel>
+            </div>
+            <div class="col-2">
+                <button [ngClass]="classButton" type="submit" class="btn btn-block pl-0 pr-0"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
